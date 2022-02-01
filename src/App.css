@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+      'Lucida Sans', Arial, sans-serif;
+  }
+
+
+  .todo-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      90deg,
+      rgba(48, 16, 255, 1) 0%,
+      rgba(100, 115, 255, 1) 100%
+    );
+    color: #fff;
+
+  }
+
+  .todo-container {
+    background-color: #000;
+    min-height: 500px;
+    width: 500px;
+    margin: 4rem auto;
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .todo-container h1 {
+      font-size: 150%;
+      text-align: center;
+      margin-bottom: 2rem;
+  }
+
+  .todo-form {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto;
+      background: linear-gradient( 
+        90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100% );
+      padding: 2px;
+      border-radius: 3px;
+      margin-bottom: 2rem;
+
+  }
+
+  .todo-form input {
+      width: 80%;
+      padding: 1rem;
+      outline:none;
+      border: none;
+      background-color: #000;
+      color: #fff; 
+  }
+
+  .todo-form input::placeholder {
+    color: #fff;
+  }
+
+  .todo-form button {
+      width: 20%;
+      outline: none;
+      border: none;
+      background-color: transparent;
+      color: #fff;
+      cursor: pointer;
+      padding: 5px;
+  }
+
+  .todo-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 7px;
+    margin: 4px 0;
+    background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%);
+  }
+
+  .todo-item:nth-child(4n+1){
+    background: linear-gradient( 
+      90deg, rgba(20, 159, 255, 1) 0%, rgba(17, 122, 255, 1) 100% );
+  }
+  
+  .todo-item:nth-child(4n+2){
+    background: linear-gradient(
+    90deg,
+    rgba(255, 12, 241, 1) 0%,
+    rgba(250, 0, 135, 1) 100%
+  );
+  }
+  
+  .todo-item:nth-child(4n+3){
+    background: linear-gradient( 
+    90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100% );
+  }
+
+  .todo-item p {
+    width: 90%;
+    padding: 1rem;
+    outline:none;
+    border: none;
+    color: #fff; 
+    background-color: transparent;
+  }
+
+  .todo-item button {
+    background-color: transparent;
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.2rem;
+  }
+
+  .completed {
+    opacity: 0.5;
+    text-decoration: line-through;
+  }
