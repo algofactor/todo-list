@@ -2,7 +2,7 @@ import React from 'react'
 import {FaCheckCircle, FaTimesCircle} from "react-icons/fa"
 // import Form from './Form'
 
-function Todo({todos, todo, setTodos,  edit, setEdit, setInput, input, key}) {
+function Todo({todos, todo, setTodos,  edit, setEdit, setInput, input}) {
 
     const deleteTodo =()=>{
         setTodos(todos.filter(el => el.id !== todo.id))

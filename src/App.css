@@ -6,17 +6,20 @@
       'Lucida Sans', Arial, sans-serif;
   }
 
-
-  .todo-app {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  body {
     background: linear-gradient(
       90deg,
       rgba(48, 16, 255, 1) 0%,
       rgba(100, 115, 255, 1) 100%
     );
+  }
+
+  .todo-app {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     color: #fff;
+    height: 100%;
 
   }
 
