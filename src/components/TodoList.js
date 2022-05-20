@@ -6,7 +6,7 @@ function TodoList({todos, setTodos, edit, setEdit}) {
         <div>
             <ul className='todo-items'>
                 {todos.map(e =>(
-                    <Todo key={e.id} todo={e} todos={todos} setTodos={setTodos} edit={edit} setEdit={setEdit}  />
+                    <Todo key={e.id} todo={e} todos={todos} setTodos={setTodos}  />
                 ))}
             </ul>
         </div>

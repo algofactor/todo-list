@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { FaCheckCircle, FaTimesCircle, FaEdit } from "react-icons/fa";
 // import Form from './Form'
 
-function Todo({ todos, todo, setTodos, edit, setEdit }) {
+function Todo({ todos, todo, setTodos}) {
+	const [edit, setEdit] = useState(false);
 	const [editValue, setEditValue] = useState(todo.text);
 	// const inputRef = useRef(null);
 
@@ -41,11 +42,11 @@ function Todo({ todos, todo, setTodos, edit, setEdit }) {
 		setEdit(false);
 	};
 
-    const handleKeyPress = (e, id) =>{
-        if(e.keyCode === 13){
-            handleSubmit(id)
-        }
-    }
+	const handleKeyPress = (e, id) => {
+		if (e.keyCode === 13) {
+			handleSubmit(id);
+		}
+	};
 
 	return (
 		<li className={todo.completed ? "todo-item completed" : "todo-item"}>
@@ -55,25 +56,33 @@ function Todo({ todos, todo, setTodos, edit, setEdit }) {
 					type='text'
 					className='edit-input'
 					value={editValue}
-                    onKeyDown={(e) => handleKeyPress(e, todo.id)}
+					onKeyDown={(e) => handleKeyPress(e, todo.id)}
 				/>
 			) : (
 				<p>{todo.text}</p>
 			)}
 			{edit ? (
 				<button onClick={() => handleSubmit(todo.id)} type='submit'>
-					<FaCheckCircle />
+					<span className='icon'>
+						<FaCheckCircle />
+					</span>
 				</button>
 			) : (
 				<div>
 					<button onClick={completeTodo} type='submit'>
-						<FaCheckCircle />
+						<span className='icon'>
+							<FaCheckCircle />
+						</span>
 					</button>
 					<button onClick={deleteTodo} type='submit'>
-						<FaTimesCircle />
+						<span className='icon'>
+							<FaTimesCircle />
+						</span>
 					</button>
 					<button type='submit' onClick={editTodo}>
-						<FaEdit />
+						<span className='icon'>
+							<FaEdit />
+						</span>
 					</button>
 				</div>
 			)}
