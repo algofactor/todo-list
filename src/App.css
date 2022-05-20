@@ -77,9 +77,9 @@
   .todo-item {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: .5rem;
     border-radius: 7px;
     margin: 4px 0;
     background: linear-gradient(
@@ -107,8 +107,8 @@
   }
 
   .todo-item p {
-    width: 90%;
-    padding: 1rem;
+    width: 70%;
+    padding: 10px;
     outline:none;
     border: none;
     color: #fff; 
@@ -127,4 +127,14 @@
   .completed {
     opacity: 0.5;
     text-decoration: line-through;
+  }
+
+  .edit-input{
+    background-color: transparent;
+    outline: none;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #fff;
   }

@@ -7,14 +7,14 @@ function App() {
 
   const [input, setInput] = useState("")
   const [todos,setTodos] = useState([])
-  const [edit, setEdit] =useState({id:null, value:""})
+  const [edit, setEdit] = useState(false);
 
   return (
     <div className="todo-app">
         <div className="todo-container">
             <h1>What's the Plan Today</h1>
-            <Form input={input} setInput={setInput} todos={todos} setTodos={setTodos} edit={edit} />
-            <TodoList todos={todos} setTodos ={setTodos} edit={edit} setEdit={setEdit} input={input} setInput={setInput} />
+            <Form input={input} setInput={setInput} todos={todos} setTodos={setTodos} />
+            <TodoList todos={todos} setTodos ={setTodos} edit={edit} setEdit={setEdit}  />
         </div>
     </div>
   );
