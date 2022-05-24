@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useRef, useEffect} from 'react'
 
 function Form({input, setInput, todos, setTodos}) {
 
@@ -16,11 +16,16 @@ function Form({input, setInput, todos, setTodos}) {
         ])
         setInput("")
     }
+
+    const inputRef = useRef(null);
+    useEffect(() => {
+        inputRef.current.focus();
+    }, []);
     
     return (
         <div className='todo-form-container'>
             <form className='todo-form'>
-                <input onChange={getInputData} type="text" placeholder='Add a todo' value={input} />
+                <input onChange={getInputData} ref={inputRef} type="text" placeholder='Add a todo' value={input} />
                 <button onClick={listTodos} type='submit'>Add todo</button>
             </form>
             

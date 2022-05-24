@@ -1,10 +1,9 @@
-import React, { useState, useRef } from "react";
+import React, { useState} from "react";
 import { FaCheckCircle, FaTimesCircle, FaEdit } from "react-icons/fa";
 
-function Todo({ todos, todo, setTodos}) {
+function Todo({ todos, todo, setTodos }) {
 	const [edit, setEdit] = useState(false);
 	const [editValue, setEditValue] = useState(todo.text);
-	const inputRef = useRef(todo.text);
 
 	const deleteTodo = () => {
 		setTodos(todos.filter((el) => el.id !== todo.id));
@@ -24,9 +23,11 @@ function Todo({ todos, todo, setTodos}) {
 		);
 	};
 
+	// const editRef = useRef(null);
+
 	const editTodo = () => {
 		setEdit(!edit);
-        inputRef.current.focus();
+		// editRef.current.focus();
 	};
 
 	const handleEdit = (e) => {
@@ -48,45 +49,51 @@ function Todo({ todos, todo, setTodos}) {
 		}
 	};
 
+	// useEffect(() => {
+	//     editRef.current.focus();
+	// });
+
 	return (
-		<li className={todo.completed ? "todo-item completed" : "todo-item"}>
+		<form className={todo.completed ? "todo-item completed" : "todo-item"}>
 			{edit && !todo.completed ? (
-				<input
-					onChange={handleEdit}
-					type='text'
-					className='edit-input'
-					value={editValue}
-					onKeyDown={(e) => handleKeyPress(e, todo.id)}
-				/>
-			) : (
-				<p>{todo.text}</p>
-			)}
-			{edit  && !todo.completed ? (
-				<button onClick={() => handleSubmit(todo.id)} type='submit'>
-					<span className='icon'>
-						<FaCheckCircle />
-					</span>
-				</button>
-			) : (
-				<div>
-					<button onClick={completeTodo} type='submit'>
+				<>
+					<input
+						type='text'
+						onChange={handleEdit}
+						value={editValue}
+						// ref={editRef}
+						className='edit-input'
+						onKeyDown={(e) => handleKeyPress(e, todo.id)}
+					/>
+					<button onClick={() => handleSubmit(todo.id)} type='submit'>
 						<span className='icon'>
 							<FaCheckCircle />
 						</span>
 					</button>
-					<button onClick={deleteTodo} type='submit'>
-						<span className='icon'>
-							<FaTimesCircle />
-						</span>
-					</button>
-					<button type='submit' onClick={editTodo}>
-						<span className='icon'>
-							<FaEdit />
-						</span>
-					</button>
-				</div>
+				</>
+			) : (
+				<>
+					<p>{todo.text}</p>
+					<div>
+						<button onClick={completeTodo} type='submit'>
+							<span className='icon'>
+								<FaCheckCircle />
+							</span>
+						</button>
+						<button onClick={deleteTodo} type='submit'>
+							<span className='icon'>
+								<FaTimesCircle />
+							</span>
+						</button>
+						<button type='submit' onClick={editTodo}>
+							<span className='icon'>
+								<FaEdit />
+							</span>
+						</button>
+					</div>
+				</>
 			)}
-		</li>
+		</form>
 	);
 }
 
