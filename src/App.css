@@ -2,16 +2,21 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+	font-family: "Poppins","Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
 		"Lucida Sans", Arial, sans-serif;
 }
 
 body {
-	background: linear-gradient(
+	/* background: linear-gradient(
 		90deg,
 		rgba(48, 16, 255, 1) 0%,
 		rgba(100, 115, 255, 1) 100%
-	);
+	); */
+	background: url(images/bg.jpg);
+	background-position: center;
+	background-size: cover;
+	backdrop-filter: blur(8px);
+	height: 100vh;
 }
 
 .todo-app {
@@ -29,6 +34,7 @@ body {
 	width: 500px;
 	margin: 4rem auto;
 	border-radius: 10px;
+	border: 1px solid #fff;
 	padding: 1.5rem;
 }
 
@@ -89,7 +95,7 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	padding: 0.5rem;
 	border-radius: 7px;
 	margin: 8px 0;
@@ -158,6 +164,10 @@ body {
 	width: 80%;
 }
 
+.icon-group{
+	padding-top: 10px;
+}
+
 @media screen and (max-width: 768px) {
 	.todo-container {
 		margin: 1rem auto;
@@ -181,9 +191,18 @@ body {
   .edit-input {
     font-size: 85%;
     padding: 8px 10px;
-    color: #fff;
     width: 80%;
   }
+  .todo-form button {
+	font-size: 75%;
+}
+}
+@media screen and (max-width: 375px) {
+	.todo-container h1 {
+		font-size: 130%;
+		text-align: center;
+		margin-bottom: 2rem;
+	}
 }
 
 @media screen and (max-width: 315px) {

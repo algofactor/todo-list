@@ -73,7 +73,7 @@ function Todo({ todos, todo, setTodos }) {
 			) : (
 				<>
 					<p>{todo.text}</p>
-					<div>
+					<div className="icon-group">
 						<button onClick={completeTodo} type='submit'>
 							<span className='icon'>
 								<FaCheckCircle />
