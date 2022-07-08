@@ -1,9 +1,14 @@
-import React, { useState} from "react";
+import React, { useEffect, useRef, useState} from "react";
 import { FaCheckCircle, FaTimesCircle, FaEdit } from "react-icons/fa";
 
 function Todo({ todos, todo, setTodos }) {
 	const [edit, setEdit] = useState(false);
 	const [editValue, setEditValue] = useState(todo.text);
+	const editRef = useRef(null);
+
+	useEffect(() => {
+        edit && editRef.current.focus();
+    }, [edit]);
 
 	const deleteTodo = () => {
 		setTodos(todos.filter((el) => el.id !== todo.id));
@@ -23,11 +28,9 @@ function Todo({ todos, todo, setTodos }) {
 		);
 	};
 
-	// const editRef = useRef(null);
-
+	
 	const editTodo = () => {
 		setEdit(!edit);
-		// editRef.current.focus();
 	};
 
 	const handleEdit = (e) => {
@@ -49,10 +52,6 @@ function Todo({ todos, todo, setTodos }) {
 		}
 	};
 
-	// useEffect(() => {
-	//     editRef.current.focus();
-	// });
-
 	return (
 		<form className={todo.completed ? "todo-item completed" : "todo-item"}>
 			{edit && !todo.completed ? (
@@ -61,7 +60,7 @@ function Todo({ todos, todo, setTodos }) {
 						type='text'
 						onChange={handleEdit}
 						value={editValue}
-						// ref={editRef}
+						ref={editRef}
 						className='edit-input'
 						onKeyDown={(e) => handleKeyPress(e, todo.id)}
 					/>
