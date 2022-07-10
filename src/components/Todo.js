@@ -37,7 +37,7 @@ function Todo({ todos, todo, setTodos }) {
 		setEditValue(e.target.value);
 	};
 
-	const handleSubmit = (id) => {
+	const handleSubmit = (e,id) => {
 		setTodos(
 			todos.map((todo) =>
 				todo.id === id ? { ...todo, text: editValue } : todo
@@ -53,9 +53,9 @@ function Todo({ todos, todo, setTodos }) {
 	};
 
 	return (
-		<form className={todo.completed ? "todo-item completed" : "todo-item"}>
+		<form onSubmit={(e) => e.preventDefault()} className={todo.completed ? "todo-item completed" : "todo-item"}>
 			{edit && !todo.completed ? (
-				<>
+				<div className="edit-todo-group">
 					<input
 						type='text'
 						onChange={handleEdit}
@@ -69,7 +69,7 @@ function Todo({ todos, todo, setTodos }) {
 							<FaCheckCircle />
 						</span>
 					</button>
-				</>
+				</div>
 			) : (
 				<>
 					<p>{todo.text}</p>

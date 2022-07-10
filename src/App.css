@@ -2,7 +2,7 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	font-family: "Poppins","Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+	font-family: "Poppins", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
 		"Lucida Sans", Arial, sans-serif;
 }
 
@@ -64,8 +64,8 @@ body {
 	height: 300px;
 }
 
-.todo-cover::-webkit-scrollbar{
-  display: none;
+.todo-cover::-webkit-scrollbar {
+	display: none;
 }
 
 .todo-form input {
@@ -104,6 +104,12 @@ body {
 		rgba(255, 118, 20, 1) 0%,
 		rgba(255, 84, 17, 1) 100%
 	);
+}
+
+.edit-todo-group {
+	display: flex;
+	align-items: center;
+	width: 100%;
 }
 
 .todo-item:nth-child(4n + 1) {
@@ -161,10 +167,14 @@ body {
 	padding: 10px;
 	font-size: 1rem;
 	color: #fff;
-	width: 80%;
+	width: 90%;
 }
 
-.icon-group{
+.edit-todo-group button{
+	width: 10%;
+}
+
+.icon-group {
 	padding-top: 10px;
 }
 
@@ -185,17 +195,17 @@ body {
 	.todo-item {
 		padding: 0.5rem 0.2rem;
 	}
-  .todo-item p {
-    font-size: 85%;
-  }
-  .edit-input {
-    font-size: 85%;
-    padding: 8px 10px;
-    width: 80%;
-  }
-  .todo-form button {
-	font-size: 75%;
-}
+	.todo-item p {
+		font-size: 85%;
+	}
+	.edit-input {
+		font-size: 85%;
+		padding: 8px 10px;
+		width: 80%;
+	}
+	.todo-form button {
+		font-size: 75%;
+	}
 }
 @media screen and (max-width: 375px) {
 	.todo-container h1 {
