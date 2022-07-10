@@ -8,9 +8,9 @@ function Form({input, setInput, todos, setTodos}) {
 
     const listTodos =(e)=>{
         e.preventDefault();
-        // if (!e.text || /^\s*$/.test(e.text)) {
-        //     return;
-        // }
+        if (!input) {
+            return;
+        }
         setTodos([
             ...todos, {text: input, completed: false, id: Math.random() * 1000}
         ])

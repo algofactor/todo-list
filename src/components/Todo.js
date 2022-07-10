@@ -37,7 +37,7 @@ function Todo({ todos, todo, setTodos }) {
 		setEditValue(e.target.value);
 	};
 
-	const handleSubmit = (e,id) => {
+	const handleSubmit = (id) => {
 		setTodos(
 			todos.map((todo) =>
 				todo.id === id ? { ...todo, text: editValue } : todo
