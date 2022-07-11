@@ -61,7 +61,7 @@ body {
 
 .todo-cover {
 	overflow-y: auto;
-	height: 300px;
+	height: 400px;
 }
 
 .todo-cover::-webkit-scrollbar {
