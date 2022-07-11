@@ -178,6 +178,13 @@ body {
 	padding-top: 10px;
 }
 
+@media screen and (min-width: 768px){
+	.todo-cover {
+		overflow-y: auto;
+		height: 300px;
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.todo-container {
 		margin: 1rem auto;
